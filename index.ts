@@ -1,7 +1,7 @@
 const onChangePriceToKorean = (val: number) => {
     const check = 10000;
     const newVal = val / check;
-    const unitWords = ['조wh', '억', '만'];
+    const unitWords = ['조', '억', '만'];
     const maxLength = Math.ceil(newVal.toString().length / 4);
     const result = unitWords.map((word, idx) => {
         const newIndex = idx === 2 ? 0 : !idx ? 2 : idx;
