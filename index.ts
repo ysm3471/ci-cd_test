@@ -41,7 +41,7 @@ function checkNum(val:string) {
 }
 
 function addNum(a:number,b:number) {
-  return a+b;
+  return a+b+b;
 }
 
 function addNum2(a:number,b:number) {
