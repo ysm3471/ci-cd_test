@@ -2,6 +2,9 @@ name: Version & Release
 
 on:
   workflow_dispatch:
+  
+permissions:
+  contents: write 
 
 jobs:
   bump-and-release:
