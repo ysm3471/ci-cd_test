@@ -1,9 +1,7 @@
 name: Version & Release
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   bump-and-release:
@@ -17,6 +15,8 @@ jobs:
       - run: npm version minor
       - run: git config user.name "github-actions[bot]"
       - run: git config user.email "github-actions[bot]@users.noreply.github.com"
+      - run: git add package.json package-lock.json
+      - run: git commit -m "chore: bump version"
       - run: git push --follow-tags
       - run: gh release create v$(node -p "require('./package.json').version") --generate-notes
         env:
