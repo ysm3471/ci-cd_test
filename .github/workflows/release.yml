@@ -19,5 +19,3 @@ jobs:
       - run: git commit -m "chore: bump version"
       - run: git push --follow-tags
       - run: gh release create v$(node -p "require('./package.json').version") --generate-notes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
